@@ -1,11 +1,16 @@
 ﻿using System.Collections.Generic;
 using file_mover_log;
 
-namespace ReverseLogViewer
+namespace reverse_log_viewer
 {
+    // <summary>
+    // Represents a filter for categorizing log entries.
+    // </summary>
     public class DataFilter
     {
-
+        // <summary>
+        // Gets or sets the list of available filters.
+        // </summary>
         public List<KeyValuePair<string, LogEntryType>> Filters { get; set; } = new List<KeyValuePair<string, LogEntryType>>()
         {
             new KeyValuePair<string, LogEntryType>("All", LogEntryType.All),

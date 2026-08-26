@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace ReverseLogViewer
+namespace reverse_log_viewer
 {
     partial class Form1
     {
@@ -43,7 +43,7 @@ namespace ReverseLogViewer
             this.pnlSettings.Controls.Add(this.lblFilter);
             this.pnlSettings.Controls.Add(this.ctlFilterCombo);
             this.pnlSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSettings.Location = new System.Drawing.Point(0, 28);
+            this.pnlSettings.Location = new System.Drawing.Point(0, 24);
             this.pnlSettings.MaximumSize = new System.Drawing.Size(0, 56);
             this.pnlSettings.MinimumSize = new System.Drawing.Size(0, 56);
             this.pnlSettings.Name = "pnlSettings";
@@ -56,11 +56,11 @@ namespace ReverseLogViewer
             this.chkShowFullPaths.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F);
             this.chkShowFullPaths.Location = new System.Drawing.Point(428, 16);
             this.chkShowFullPaths.Name = "chkShowFullPaths";
-            this.chkShowFullPaths.Size = new System.Drawing.Size(143, 22);
+            this.chkShowFullPaths.Size = new System.Drawing.Size(113, 20);
             this.chkShowFullPaths.TabIndex = 3;
             this.chkShowFullPaths.Text = "Show Full Paths";
             this.chkShowFullPaths.UseVisualStyleBackColor = true;
-            this.chkShowFullPaths.CheckedChanged += new System.EventHandler(this.chkShowFullPaths_CheckedChanged);
+            this.chkShowFullPaths.CheckedChanged += new System.EventHandler(this.ShowFullPaths_CheckedChanged);
             // 
             // chkPreserveScrollLocation
             // 
@@ -70,7 +70,7 @@ namespace ReverseLogViewer
             this.chkPreserveScrollLocation.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F);
             this.chkPreserveScrollLocation.Location = new System.Drawing.Point(220, 16);
             this.chkPreserveScrollLocation.Name = "chkPreserveScrollLocation";
-            this.chkPreserveScrollLocation.Size = new System.Drawing.Size(202, 22);
+            this.chkPreserveScrollLocation.Size = new System.Drawing.Size(158, 20);
             this.chkPreserveScrollLocation.TabIndex = 2;
             this.chkPreserveScrollLocation.Text = "Preserve Scroll Position";
             this.chkPreserveScrollLocation.UseVisualStyleBackColor = true;
@@ -81,7 +81,7 @@ namespace ReverseLogViewer
             this.lblFilter.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilter.Location = new System.Drawing.Point(12, 15);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(50, 18);
+            this.lblFilter.Size = new System.Drawing.Size(39, 16);
             this.lblFilter.TabIndex = 1;
             this.lblFilter.Text = "Filter:";
             this.lblFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -92,8 +92,9 @@ namespace ReverseLogViewer
             this.ctlFilterCombo.FormattingEnabled = true;
             this.ctlFilterCombo.Location = new System.Drawing.Point(68, 14);
             this.ctlFilterCombo.Name = "ctlFilterCombo";
-            this.ctlFilterCombo.Size = new System.Drawing.Size(121, 24);
+            this.ctlFilterCombo.Size = new System.Drawing.Size(121, 21);
             this.ctlFilterCombo.TabIndex = 0;
+            this.ctlFilterCombo.SelectedIndexChanged += new System.EventHandler(this.FilterCombo_SelectedIndexChanged);
             // 
             // pnlBody
             // 
@@ -129,7 +130,7 @@ namespace ReverseLogViewer
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1176, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1176, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "File";
             // 
@@ -138,15 +139,15 @@ namespace ReverseLogViewer
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.fileToolStripMenuItem.Text = "File...";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.openToolStripMenuItem.Text = "Open...";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
             // 
             // Form1
             // 
