@@ -13,6 +13,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <LangVersion>7.3</LangVersion>
+    <!-- or 7.0, 7.1, 7.2 -->
     <PublishUrl>\\192.168.12.53\D_Share\Installers\reverse_log_viewer\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
@@ -25,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\192.168.12.53\D_Share\Installers\reverse_log_viewer\</InstallUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -87,6 +89,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogEntryHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -137,4 +140,8 @@
     <Content Include="app.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- … your existing project settings … -->
+  <Target Name="AfterPublish" AfterTargets="Publish">
+    <Exec Command="powershell -ExecutionPolicy Bypass -File &quot;$(SolutionDir)tools\sign-service.ps1&quot; -TargetPath &quot;$(PublishDir)reverse-log-viewer.exe&quot;" />
+  </Target>
 </Project>

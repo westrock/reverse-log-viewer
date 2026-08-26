@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ReverseLogViewer
+namespace reverse_log_viewer
 {
     static class Program
     {
