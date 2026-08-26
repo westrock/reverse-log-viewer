@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ReverseLogViewer
+namespace reverse_log_viewer
 {
     static class Program
     {
         [STAThread]
         static void Main(string[] args)
         {
+            /*
             if (args.Length == 0)
             {
                 MessageBox.Show("No log file provided.\n\nThis program must be launched by opening a .rlog file.",
@@ -16,10 +17,12 @@ namespace ReverseLogViewer
                                 MessageBoxIcon.Warning);
                 return;
             }
-
+            */
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(args[0]));
+
+            string initialPath = args.Length > 0 ? args[0] : null;
+            Application.Run(new Form1(initialPath));
         }
     }
 }
